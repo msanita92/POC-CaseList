@@ -1,0 +1,453 @@
+/* ----------- Project Name ADMIN PANEL ------------ */
+/* ----------- Code By Vaishak -- Creators Infotek ------------ */
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2'), url('../fonts/Roboto-Bold.woff') format('woff'), url('../fonts/Roboto-Bold.ttf') format('truetype'), url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg'), url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.eot');
+    src: url('../fonts/Roboto-Light.woff2') format('woff2'), url('../fonts/Roboto-Light.woff') format('woff'), url('../fonts/Roboto-Light.ttf') format('truetype'), url('../fonts/Roboto-Light.svg#Roboto-Bold') format('svg'), url('../fonts/Roboto-Light.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: url('../fonts/Roboto-Medium.eot');
+    src: url('../fonts/Roboto-Medium.woff2') format('woff2'), url('../fonts/Roboto-Medium.woff') format('woff'), url('../fonts/Roboto-Medium.ttf') format('truetype'), url('../fonts/Roboto-Medium.svg#Roboto-Medium') format('svg'), url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto-Light', 'Open Sans';
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto-Medium','Open Sans';
+}
+strong {
+    font-family: 'Roboto-Bold', 'Open Sans';
+    font-weight: 700;
+}
+a {
+    cursor: pointer;
+    outline: unset;
+}
+/*START Header*/
+#header {
+    background: #fff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 64px;
+    z-index: 1001;
+    background: #ffffff;
+    color: rgba(49, 53, 52, 0.6);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+}
+.headerLeft {
+    position: absolute;
+}
+.headerRight {
+    float: right;
+}
+header#header .headerBrand ul {
+    display: table;
+    margin: 0;
+    margin-left: 24px;
+    line-height: 64px;
+}
+header#header .headerBrand li {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+    header#header .headerBrand li span.brandName {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-family: 'Roboto-Medium', 'Open Sans';
+    }
+
+    header#header .headerBrand li:last-child {
+        padding-left: 22px;
+    }
+.collapseIcon {
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 38px;
+    text-align: center;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+    .collapseIcon:hover, .collapseIcon:focus, .collapseIcon:active {
+        background: rgb(249, 249, 249);
+    }
+    .collapseIcon i {
+        vertical-align: text-top;
+    }
+.headerBar:before, .headerBar:after {
+    content: " ";
+    display: table;
+}
+.headerNavbar {
+    margin: 0 25px 0 10px;
+    padding-left: 0;
+    list-style: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+    .headerNavbar > li {
+        position: relative;
+        float: left;
+        transition: all ease 0.5s;
+        -webkit-transition: all ease 0.5s;
+        -moz-transition: all ease 0.5s;
+        -o-transition: all ease 0.5s;
+    }
+        .headerNavbar > li.dropdown > a {
+            display: block;
+            padding: 12px 14px 12px 14px;
+            width: 190px;
+        }
+        .headerNavbar > li.dropdown.show > a {
+            -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+            -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+        }
+        .headerNavbar > li:hover {
+            background: rgb(249, 249, 249);
+        }
+    .headerNavbar li.dropdown > a.dropdown-toggle::after {
+        display: none;
+    }
+    .headerNavbar li.dropdown > a span.userName:after {
+        display: inline-block;
+        content: "\f107" !important;
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        right: -14px;
+        margin: auto;
+        bottom: 0;
+        height: 15px;
+        transition: all ease 0.2s;
+    }
+    .headerNavbar li.dropdown.show > a span.userName:after {
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+    }
+.userName {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 20px 0 10px;
+    line-height: 15px;
+    position: relative;
+    color: #222;
+}
+    .userName > small {
+        display: block;
+        color: #c5c5c5;
+    }
+.headerNavbar li.dropdown > a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+.headerNavbar .dropdown .dropdown-menu {
+    margin: 0;
+    border-radius: unset;
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+    border: unset;
+}
+.dropdown.show .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
+.headerNavbar .dropdown-menu > li {
+    position: relative;
+    min-width: 190px;
+    font-size: 13px;
+}
+    .headerNavbar .dropdown-menu > li > a {
+        display: block;
+        clear: both;
+        font-weight: normal;
+        line-height: 1.846153846;
+        color: #222;
+        white-space: nowrap;
+        padding: 3px 15px;
+    }
+        .headerNavbar .dropdown-menu > li > a:hover, .headerNavbar .dropdown-menu > li > a:focus {
+            text-decoration: none;
+            background-color: #f5f5f5;
+        }
+.dropdown-header {
+    padding: 3px 15px;
+    font-size: 12px;
+    color: #bbb;
+}
+.divider {
+    border-top: 1px solid #eee;
+    margin: 5px 0;
+}
+.badge {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0;
+    position: absolute;
+    right: 6px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+    .badge.style-danger {
+        background-color: #f44336;
+        color: #ffffff;
+    }
+/*END Header*/
+
+/*START Sidebar*/
+#sidebar ul {
+    list-style-type: none;
+}
+#sidebar .nano {
+    width: 225px;
+    position: fixed;
+    left: 0;
+    top: 64px;
+    height: calc(100vh - 64px);
+    background: #2b323a;
+    color: rgba(255,255,255,0.7);
+    z-index: 999;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+    #sidebar .nano .nano-pane {
+        width: 5px;
+        z-index: 999;
+    }
+    #sidebar .nano > .nano-pane > .nano-slider {
+        background: rgba(255,255,255,.5);
+    }
+    #sidebar .nano ul, #sidebar .nano .sidebarFooter {
+        width: 225px;
+    }
+#sidebar .sidebarFooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(12, 12, 12, 0.5);
+    padding: 16px;
+}
+#sidebar .sidebarScrollPanel {
+    position: relative;
+    padding-top: 16px;
+    z-index: 2;
+    min-height: 100%;
+}
+    #sidebar .sidebarScrollPanel > nav {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+#sidebar nav ul li a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#sidebar nav > ul > li > a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    padding: 12px 0px;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 0;
+    padding-left: 0;
+    min-height: 40px;
+    min-width: 64px;
+    z-index: 1;
+    cursor: pointer;
+    /*transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;*/
+}
+    #sidebar nav > ul > li > a span:first-child {
+        position: absolute;
+        left: 6px;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        color: rgba(255,255,255,0.7);
+        font-size: 15px;
+        overflow: hidden;
+        border-radius: 999px;
+        text-align: center;
+        line-height: 40px;
+    }
+#sidebar nav > ul > li a span.menuTitle {
+    padding-left: 57px;
+}
+#sidebar nav > ul > li.dropDown > a:after {
+    font-family: FontAwesome;
+    content: "\f105";
+    top: 0;
+    right: 12px;
+    position: absolute;
+    height: 15px;
+    bottom: 0;
+    margin: auto;
+    line-height: 15px;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+#sidebar nav > ul > li.dropDown[aria-expanded="true"] > a:after {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+#sidebar nav li > a:hover, #sidebar nav > ul > li[aria-expanded="true"], #sidebar nav li > a.active {
+    background-color: #20252b;
+    color: rgba(255,255,255,1);
+}
+    #sidebar nav li > a:hover span:first-child, #sidebar nav li > a.active span:first-child, #sidebar nav > ul > li[aria-expanded="true"] a span:first-child {
+        color: rgba(255,255,255,1);
+    }
+#sidebar nav li {
+    margin: 1px 0;
+}
+/*Submenu*/
+ul.subMenu {
+    background: #2b323a;
+    border-bottom: 1px solid rgba(206, 206, 206, 0.09);
+}
+    ul.subMenu > li > a {
+        padding: 7px 20px;
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all ease 0.5s;
+        -webkit-transition: all ease 0.5s;
+        -moz-transition: all ease 0.5s;
+        -o-transition: all ease 0.5s;
+    }
+        ul.subMenu > li > a:hover {
+            background-color: #313942;
+        }
+        ul.subMenu > li > a > span:first-child {
+            padding: 0 10px 0 25px;
+        }
+#sidebar .nano.menuCollapsed {
+    width: 55px;
+}
+    #sidebar .nano.menuCollapsed:hover {
+        width: 225px;
+    }
+        #sidebar .nano.menuCollapsed:hover nav > ul li a span.menuTitle, #sidebar .nano.menuCollapsed:hover ul.subMenu > li > a, #sidebar .nano.menuCollapsed:hover nav > ul > li.dropDown > a:after, #sidebar .nano.menuCollapsed:hover .sidebarFooter {
+            display: inline-block;
+            opacity: 1;
+        }
+    #sidebar .nano.menuCollapsed nav ul li a span.menuTitle, #sidebar .nano.menuCollapsed ul.subMenu > li > a, #sidebar .nano.menuCollapsed nav > ul > li.dropDown > a:after, #sidebar .nano.menuCollapsed .sidebarFooter {
+        display: none;
+        opacity: 0;
+        transition: all ease 2s;
+        -webkit-transition: all ease 2s;
+        -moz-transition: all ease 2s;
+        -o-transition: all ease 2s;
+    }
+    #sidebar .nano.menuCollapsed nav > ul > li > a span:first-child {
+        left: 6px;
+    }
+/*For Mobile*/
+
+/*END Sidebar*/
+/*START Content Block*/
+#content-block.fullWidthContent {
+    padding-left: 75px;
+}
+#content-block {
+    overflow: hidden;
+    padding-left: 240px;
+    width: 100%;
+    min-height: 100%;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -o-transition: all ease 0.5s;
+}
+#content {
+    position: relative;
+    width: 100%;
+    left: 0;
+    padding-top: 75px;
+}
+/*END Content Block*/
+
+/******************************************START RESPONSIVE****************************************/
+/*START only Mobile View*/
+
+@media only screen and (max-width: 500px) {
+   header#header .headerBrand li:last-child {
+        position: absolute;
+        right: 15px;
+        padding: 0;
+    }
+    header#header .headerBrand ul {
+        margin: 0;
+        padding-left: 15px;
+    }
+    #sidebar .nano.menuCollapsed {
+        width: 0px;
+    }
+    #content-block.fullWidthContent {
+        padding: 5px 10px;
+    }
+    #content-block {
+        padding: 5px 10px;
+    }
+}
+/*END only Mobile View*/

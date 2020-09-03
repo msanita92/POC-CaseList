@@ -1,0 +1,57 @@
+<header id="header" ng-controller="headerCtrl as vm">
+    <div class="headerBar">
+        <div class="headerLeft">
+            <div class="headerBrand">
+                <ul>
+                    <li><span class="brandName text-primary">CI</span></li>
+                    <li><a class="collapseIcon" ng-click='toggleMenu()'><i class="zmdi zmdi-menu"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="productTitle">
+            <h4>{{schoolName}}</h4>
+        </div>
+        <div class="headerRight">
+            <ul class="headerNavbar pull-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <!--<img ng-src="assets/img/john-doe.jpg" alt="">-->
+                        <span class="letterIcon">{{full}}</span>
+                        <span class="userName">
+                            <!--<span>{{userName}}</span>-->
+                            <span></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!--<li class="dropdown-header">Config</li>-->
+                        <!--<li><a href="">My profile</a></li>-->
+                        <li><a href="#" ui-sref="profile"><i class="fa fa-user i_5"></i>  Profile</a></li>
+                        <li ng-repeat="item in vm.permissionsDetails" ng-if="item.isSubModuleActive && item.mainModuleName =='Settings' && !isAdmin">
+                            <a ui-sref="settingEdit">
+                                <i class="fa fa-lock"></i>
+                                Settings
+                            </a>
+                        </li>
+                        <li ng-if="isAdmin">
+                            <a ui-sref="settingEdit">
+                                <i class="fa fa-lock"></i>
+                                Settings
+                            </a>
+                        </li>
+
+                        <!--<li><a href="">My Inbox <span class="badge style-danger pull-right">6</span></a></li>-->
+                        <!--<li class="divider"></li>-->
+                        <!--<li><a href=""><i class="fa fa-fw fa-lock"></i> Lock</a></li>-->
+                        <li><a ui-sref="" ng-click="logOut()"><i class="fa fa-fw fa-power-off text-danger"></i>Logout</a></li>
+
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul>
+        </div>
+    </div>
+    
+</header>
+
+<style>
+    
+</style>

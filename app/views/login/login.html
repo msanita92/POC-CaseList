@@ -1,0 +1,93 @@
+
+<div class="container">
+
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-sm-10">
+            <!--<div class="centeredLogo text-center p-4">
+                <img ng-src="{{nhvpsLogo}}" class="img-fluid"/>
+
+            </div>-->
+            <div class="formBox">
+                <!--<div class="text-center">
+                    <img ng-src="{{nhvpsLogo}}" class="img-fluid" />
+                </div>-->
+                <div class="text-center formBoxHeading">
+                    <h2>Log In</h2>
+                </div>
+                <form name="loginform" novalidate>
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="input-group mb-4">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="emailOrPhnnumber"
+                                       placeholder="E-Mail Address"
+                                       ng-model="lg.loginInfo.userName"
+                                       required />
+                                <!-- Displaying messages For emailOrPhonenumber-->
+                                <div class="text-danger error_msg" ng-messages="loginform.emailOrPhnnumber.$error"
+                                     ng-if="loginform.emailOrPhnnumber.$touched || loginform.emailOrPhnnumber.$dirty " role="alert">
+                                    <div ng-message="required">This field is required.</div>
+                                    <div ng-message="pattern">Please enter a valid email address.</div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="input-group mb-4">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="password" class="form-control" name="password"
+                                       placeholder="Password"
+                                       ng-model="lg.loginInfo.password" required />
+                                <!-- Displaying messages for password ng-pattern="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?_()}{''_|!@$%^&*-]).{8,}$/" -->
+                                <div class="text-danger error_msg" ng-messages="loginform.password.$error"
+                                     ng-if="loginform.password.$touched ||loginform.password.$dirty">
+                                    <div ng-message="required">This field is required.</div>
+                                    <!--<div ng-message="pattern">Please enter valid password</div>-->
+                                </div>
+                            </div>
+                            <p ng-if="showError" class="text-danger">Please enter valid login details.</p>
+                            <!--<span style="color: red;">{{message}}</span>-->
+                            
+
+                            <div class="text-center">
+                                <button class="btn btn-primary customRedbtn" ng-disabled="loginform.$invalid" ng-click="login()">Log In</button>
+                            </div>
+
+                            <!--<div class="text-center mb-4">
+                                    <a href="" class="btn btn-link">Forgot password</a>
+
+                            </div>-->
+
+                            <div class="text-center mb-4">
+                                <!--<a  ng-click="goToPreSchool()" class="btn btn-link">Register for PG I, II, III</a>
+                                <a  ng-click="goToSchool()" class="btn btn-link">Register for 1-9 STD</a>-->
+                                <!--ui-sref="newAdmission"-->
+                                <!--<a href="" class="btn btn-link">Not Yet Registered</a>-->
+                                <div class="clearfix"></div>
+                                <!--<a ui-sref="receipt" class="btn btn-link">Receipt</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="loader" ng-if="loader">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
+    </div>
+</div>
+
+
+<style>
+	.error_msg {
+		position: absolute;
+		left: 0px;
+		bottom: -30px;
+		margin-bottom: 10px;
+		font-size: 13px;
+	}
+</style>

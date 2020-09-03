@@ -1,0 +1,24 @@
+﻿<div class="formPageContainer" ng-controller="headerCtrl as vm">
+    <section class="contentHeader">
+        <h1>
+            Dashboard
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-tachometer"></i> Dashboard</li>
+        </ol>
+    </section>
+    
+    <div class="contentBody dashboardBody">
+        <h5>Welcome To</h5>
+        <h1>{{schoolName}}</h1>
+        <!--<img src="assets/img/logo2.png" alt="NHVPS" />-->
+    </div>
+    <div class="loader" ng-if="loader">
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+﻿<div class="sectionPage">
+    <section class="contentHeader">
+        <h1>
+            Case list
+            <small></small>
+        </h1>
+        <ol class="breadcrumb">
+            <li ui-sref="home"><i class="fa fa-tachometer"></i> Dashboard</li>
+            <li class="active"><i class="fa fa-users"></i>Case list</li>
+        </ol>
+    </section>
+    <div class="contentBody">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ref No</th>
+                        <th>Service</th>
+                        <th>Applicant</th>
+                        <th>Council Tax</th>
+                        <th>Status</th>
+                        <th>Status Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in caseViewLists">
+                        <th><a ng-click="getData(item.refNo)">{{item.refNo}}</a></th>
+                        <td>{{item.service}}</td>
+                        <td>{{item.applicant}}</td>
+                        <td>{{item.councilTax}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.statusReason}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

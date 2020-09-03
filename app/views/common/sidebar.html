@@ -1,0 +1,43 @@
+<div id="main-menu" class="sidebarNav nano" ng-controller="sidebarCtrl as vm">
+    <div class="nano-content">
+        <div class="sidebarScrollPanel" style="padding-bottom: 55px;">
+            <nav>
+                <ul class="page-sidebar-menu page-sidebar-menu-light " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+                    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+                    <!--<li class="">
+                        <a ui-sref-active="active" ui-sref="admindashboard"><span><i class="fa fa-tachometer"></i></span> <span class="menuTitle">Dashboard</span></a>
+                    </li>-->
+
+                    <li class="">
+                        <a ui-sref-active="active" ui-sref="circular"><span><i class="fa fa-flag"></i></span> <span class="menuTitle">Case list</span></a>
+                    </li>
+                   
+                </ul> 
+            </nav>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(".dropDown").click(function () {
+        $('.collapse').each(function () {
+            $(this).collapse('hide');
+        });
+    });
+    $("#mySideBar > li > a").click(function () {
+        $('.collapse').each(function () {
+            $(this).collapse('hide');
+        });
+    });
+
+
+
+
+    $(document).ready(function () {
+        $(".nano").nanoScroller();
+    });
+    $(".dropDown").click(function () {
+        $(".nano").nanoScroller();
+        setInterval(function () { $(".nano").nanoScroller(); }, 1000);
+    });
+</script>
